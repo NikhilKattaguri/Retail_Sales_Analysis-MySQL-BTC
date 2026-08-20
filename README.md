@@ -241,7 +241,44 @@ Used for:
 - Percentile analysis
 - Product ranking
 
-Examples:
+---
+
+## 🚀 Future Enhancements
+
+Potential extensions to this project include:
+
+- Power BI dashboard development
+- Sales trend analysis
+- Customer-level purchasing analysis
+- Discount effectiveness analysis
+- Customer segmentation
+- Product affinity analysis
+- Repeat purchase analysis
+- Revenue forecasting
+
+---
+
+## 📌 Intended Audience
+
+- Data Analysts
+- Business Analysts
+- SQL Developers
+- SQL learners
+- Data Analytics recruiters
+- Retail analytics professionals
+
+This project demonstrates practical SQL skills applicable to real-world **Data Analyst and Business Analyst roles**.
+
+---
+
+## 📬 Contact
+
+If you have questions or would like to discuss this project, feel free to connect:
+
+**Nikhil Kattaguri**
+
+- [LinkedIn](https://www.linkedin.com/in/nikhilkattaguri)
+- [Email](mailto:nikhilkattaguri27@gmail.com)
 
 ```sql
 SUM(REVENUE) OVER(PARTITION BY SEGMENT_NAME)
