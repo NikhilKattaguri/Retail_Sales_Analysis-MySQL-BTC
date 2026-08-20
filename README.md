@@ -1,2 +1,252 @@
-# Retail_Sales_Analysis-MySQL-BTC
-SQL-based retail sales analysis using MySQL to uncover transaction, product, segment, category, revenue, penetration, and basket insights.
+# Retail Sales Analysis using SQL
+
+Performed comprehensive SQL-based analysis on retail transaction data, uncovering insights into sales performance, transaction behavior, customer membership, product performance, category and segment contribution, product penetration, and product combinations using MySQL.
+
+---
+
+## 📊 Project Overview
+
+This project analyzes retail sales data using SQL to answer a series of real-world business questions.
+
+The analysis covers:
+
+- Overall sales and revenue performance
+- Transaction-level purchasing behavior
+- Revenue distribution and percentile analysis
+- Member vs non-member transaction behavior
+- Product and segment performance
+- Category-level sales analysis
+- Revenue contribution using window functions
+- Product transaction penetration
+- Frequently purchased product combinations
+
+The project demonstrates practical SQL skills including **CTEs, JOINs, GROUP BY, aggregation, window functions, ranking, conditional logic, COUNT(DISTINCT), and self-joins**.
+
+---
+
+## 📁 Dataset Information
+
+The project uses the following datasets:
+
+### **1. sales.csv**
+
+Contains transaction-level retail sales records.
+
+Key fields include:
+
+- `txn_id` – Transaction identifier
+- `prod_id` – Product identifier
+- `qty` – Quantity purchased
+- `price` – Product price
+- `discount` – Discount percentage
+- `member_m` – Member indicator
+- `start_txn_time` – Transaction timestamp
+
+The dataset contains:
+
+- **15,095 sales records**
+- **2,500 unique transactions**
+- **12 distinct products**
+
+---
+
+### **2. product_details.csv**
+
+Contains product-level information and business hierarchy attributes.
+
+Key fields include:
+
+- `product_id`
+- `product_name`
+- `category_name`
+- `segment_name`
+- `category_id`
+- `segment_id`
+- `style_id`
+
+This table is joined with the sales table to analyze product, segment, and category performance.
+
+---
+
+### **3. product_prices.csv**
+
+Contains product-level price reference information.
+
+Key fields include:
+
+- `id`
+- `product_id`
+- `price`
+
+---
+
+### **4. product_hierarchy.csv**
+
+Contains the product hierarchy structure.
+
+Key fields include:
+
+- `id`
+- `parent_id`
+- `level_text`
+- `level_name`
+
+---
+
+## 🛠️ Tools & Technologies
+
+- **MySQL**
+- **SQL**
+- **MySQL Workbench**
+- **CTEs**
+- **Window Functions**
+- **JOINs**
+- **GROUP BY & HAVING**
+- **Aggregate Functions**
+- **COUNT(DISTINCT)**
+- **RANK()**
+- **PERCENT_RANK()**
+- **CASE WHEN**
+- **Self-JOINs**
+- **GitHub** – Version control and project documentation
+
+---
+
+## 📈 Analytical Approach
+
+The project answers **19 structured business questions** across three major analytical areas.
+
+### **1. High-Level Sales Analysis**
+
+Analyzed overall sales performance:
+
+- Total quantity sold
+- Total revenue before discounts
+- Total discount amount
+
+---
+
+### **2. Transaction Analysis**
+
+Analyzed transaction-level customer purchasing behavior:
+
+- Number of unique transactions
+- Average number of unique products purchased per transaction
+- 25th, 50th, and 75th percentile transaction revenue
+- Average discount value per transaction
+- Member vs non-member transaction percentage
+- Average revenue for member and non-member transactions
+
+Advanced SQL concepts used:
+
+- **CTEs**
+- **COUNT(DISTINCT)**
+- **PERCENT_RANK()**
+- **Window Functions**
+- **Conditional Aggregation**
+
+---
+
+### **3. Product Analysis**
+
+Analyzed product, segment, and category performance:
+
+- Top 3 products by revenue
+- Total quantity, revenue, and discount by segment
+- Top-selling product within each segment
+- Total quantity, revenue, and discount by category
+- Top-selling product within each category
+- Revenue percentage split by product within each segment
+- Revenue percentage split by segment within each category
+- Revenue percentage split by category
+- Transaction penetration for each product
+- Most common combination of three products purchased in a transaction
+
+Advanced SQL concepts used:
+
+- **JOINs**
+- **CTEs**
+- **RANK()**
+- **Window Functions**
+- **COUNT(DISTINCT)**
+- **Self-JOINs**
+- **PARTITION BY**
+- **Conditional Filtering**
+
+---
+
+## 💡 Key Insights Generated
+
+The analysis generated several business-level insights.
+
+### **Sales Performance**
+
+- **45,216 units** were sold.
+- Total revenue before discounts was **$1,289,453.00**.
+- Total discount value was **$156,229.14**.
+- Discounts represented approximately **12.12% of revenue**.
+
+### **Transaction Insights**
+
+- **2,500 unique transactions** were identified.
+- Average transaction contained **6.04 unique products**.
+- Average discount value per transaction was **$62.49**.
+- Transaction revenue percentiles were:
+  - **P25:** $376
+  - **P50:** $510
+  - **P75:** $647
+
+### **Membership Insights**
+
+Transaction split between members and non-members:
+
+- **Non-members:** 39.80%
+- **Members:** 60.20%
+
+Average transaction revenue:
+
+- **Non-members:** $515.04
+- **Members:** $516.27
+
+### **Product & Category Insights**
+
+- Top revenue-generating product: **Blue Polo Shirt - Mens**
+- Revenue generated by the top product: **$217,683**
+- Highest-revenue category: **Mens**
+- Mens category contributed approximately **55.38% of total revenue**
+- Highest-revenue segment: **Shirt**
+- Shirt segment generated approximately **$406,143**
+
+### **Product Combination Analysis**
+
+The most common combination of three products purchased together was:
+
+- **White Tee Shirt - Mens**
+- **Grey Fashion Jacket - Womens**
+- **Teal Button Up Shirt - Mens**
+
+This combination occurred in **352 transactions**.
+
+---
+
+## 🧠 SQL Concepts Demonstrated
+
+### **Common Table Expressions (CTEs)**
+
+Used to break complex analytical problems into smaller, readable steps.
+
+### **Window Functions**
+
+Used for:
+
+- Revenue percentage calculations
+- Overall revenue comparisons
+- Segment-level revenue contribution
+- Category-level revenue contribution
+- Percentile analysis
+- Product ranking
+
+Examples include:
+
+```sql
+SUM(REVENUE) OVER(PARTITION BY SEGMENT_NAME)
