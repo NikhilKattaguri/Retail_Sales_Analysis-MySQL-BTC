@@ -279,6 +279,3 @@ If you have questions or would like to discuss this project, feel free to connec
 
 - [LinkedIn](https://www.linkedin.com/in/nikhilkattaguri)
 - [Email](mailto:nikhilkattaguri27@gmail.com)
-
-```sql
-SUM(REVENUE) OVER(PARTITION BY SEGMENT_NAME)
