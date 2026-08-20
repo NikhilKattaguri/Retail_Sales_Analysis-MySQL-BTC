@@ -6,7 +6,7 @@ Performed comprehensive SQL-based analysis on retail transaction data, uncoverin
 
 ## 📊 Project Overview
 
-This project analyzes retail sales data using SQL to answer a series of real-world business questions.
+This project analyzes retail sales data using SQL to answer **19 real-world business questions**.
 
 The analysis covers:
 
@@ -20,13 +20,11 @@ The analysis covers:
 - Product transaction penetration
 - Frequently purchased product combinations
 
-The project demonstrates practical SQL skills including **CTEs, JOINs, GROUP BY, aggregation, window functions, ranking, conditional logic, COUNT(DISTINCT), and self-joins**.
+The project demonstrates practical SQL skills including **CTEs, JOINs, GROUP BY, aggregate functions, window functions, ranking, conditional logic, COUNT(DISTINCT), and self-joins**.
 
 ---
 
 ## 📁 Dataset Information
-
-The project uses the following datasets:
 
 ### **1. sales.csv**
 
@@ -39,14 +37,14 @@ Key fields include:
 - `qty` – Quantity purchased
 - `price` – Product price
 - `discount` – Discount percentage
-- `member_m` – Member indicator
+- `member_m` – Membership indicator
 - `start_txn_time` – Transaction timestamp
 
-The dataset contains:
+**Dataset statistics:**
 
-- **15,095 sales records**
-- **2,500 unique transactions**
-- **12 distinct products**
+- **Rows:** 15,095
+- **Unique Transactions:** 2,500
+- **Distinct Products:** 12
 
 ---
 
@@ -95,26 +93,26 @@ Key fields include:
 
 ## 🛠️ Tools & Technologies
 
-- **MySQL**
 - **SQL**
+- **MySQL**
 - **MySQL Workbench**
 - **CTEs**
 - **Window Functions**
 - **JOINs**
-- **GROUP BY & HAVING**
+- **GROUP BY**
 - **Aggregate Functions**
 - **COUNT(DISTINCT)**
 - **RANK()**
 - **PERCENT_RANK()**
 - **CASE WHEN**
 - **Self-JOINs**
-- **GitHub** – Version control and project documentation
+- **GitHub** – Version control and documentation
 
 ---
 
 ## 📈 Analytical Approach
 
-The project answers **19 structured business questions** across three major analytical areas.
+The project answers **19 structured SQL business questions** across three major analytical areas.
 
 ### **1. High-Level Sales Analysis**
 
@@ -128,13 +126,13 @@ Analyzed overall sales performance:
 
 ### **2. Transaction Analysis**
 
-Analyzed transaction-level customer purchasing behavior:
+Analyzed transaction-level purchasing behavior:
 
 - Number of unique transactions
-- Average number of unique products purchased per transaction
-- 25th, 50th, and 75th percentile transaction revenue
+- Average unique products purchased per transaction
+- 25th, 50th, and 75th percentile revenue per transaction
 - Average discount value per transaction
-- Member vs non-member transaction percentage
+- Percentage split of member vs non-member transactions
 - Average revenue for member and non-member transactions
 
 Advanced SQL concepts used:
@@ -151,16 +149,16 @@ Advanced SQL concepts used:
 
 Analyzed product, segment, and category performance:
 
-- Top 3 products by revenue
+- Top 3 products by total revenue
 - Total quantity, revenue, and discount by segment
-- Top-selling product within each segment
+- Top-selling product for each segment
 - Total quantity, revenue, and discount by category
-- Top-selling product within each category
-- Revenue percentage split by product within each segment
-- Revenue percentage split by segment within each category
+- Top-selling product for each category
+- Revenue percentage split by product for each segment
+- Revenue percentage split by segment for each category
 - Revenue percentage split by category
 - Transaction penetration for each product
-- Most common combination of three products purchased in a transaction
+- Most common combination of three products in a single transaction
 
 Advanced SQL concepts used:
 
@@ -169,15 +167,13 @@ Advanced SQL concepts used:
 - **RANK()**
 - **Window Functions**
 - **COUNT(DISTINCT)**
-- **Self-JOINs**
 - **PARTITION BY**
+- **Self-JOINs**
 - **Conditional Filtering**
 
 ---
 
 ## 💡 Key Insights Generated
-
-The analysis generated several business-level insights.
 
 ### **Sales Performance**
 
@@ -191,22 +187,22 @@ The analysis generated several business-level insights.
 - **2,500 unique transactions** were identified.
 - Average transaction contained **6.04 unique products**.
 - Average discount value per transaction was **$62.49**.
-- Transaction revenue percentiles were:
-  - **P25:** $376
-  - **P50:** $510
-  - **P75:** $647
+- Transaction revenue percentiles:
+  - **25th Percentile:** $376
+  - **50th Percentile:** $510
+  - **75th Percentile:** $647
 
 ### **Membership Insights**
 
 Transaction split between members and non-members:
 
-- **Non-members:** 39.80%
 - **Members:** 60.20%
+- **Non-members:** 39.80%
 
 Average transaction revenue:
 
-- **Non-members:** $515.04
 - **Members:** $516.27
+- **Non-members:** $515.04
 
 ### **Product & Category Insights**
 
@@ -233,20 +229,19 @@ This combination occurred in **352 transactions**.
 
 ### **Common Table Expressions (CTEs)**
 
-Used to break complex analytical problems into smaller, readable steps.
+Used to break complex analytical problems into multiple readable steps.
 
 ### **Window Functions**
 
 Used for:
 
 - Revenue percentage calculations
-- Overall revenue comparisons
 - Segment-level revenue contribution
 - Category-level revenue contribution
 - Percentile analysis
 - Product ranking
 
-Examples include:
+Examples:
 
 ```sql
 SUM(REVENUE) OVER(PARTITION BY SEGMENT_NAME)
